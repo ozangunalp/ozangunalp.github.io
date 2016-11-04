@@ -1,0 +1,16 @@
+---
+layout: default
+title: Home
+---
+<div id="home" class="posts">
+    {% include home.html %}
+    <h2>
+        <a href="{{site.baseurl}}/blog"><i class="fa fa-bookmark"></i> Blog Posts</a>
+    </h2>
+    <ul id="blog-posts" class="posts">
+        {% for post in site.posts %}
+        <li><a href="{{ post.url }}"><span>{{ post.date | date_to_string }} &raquo;</span>{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
